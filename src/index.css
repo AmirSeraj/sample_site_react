@@ -18,11 +18,16 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr;
   grid-template-areas:
-    'header'
-    'main';
+    "header"
+    "main";
 }
 
-header{
+header {
   display: flex;
   align-items: center;
+}
+
+a {
+  color: "#000";
+  text-decoration: none;
 }
