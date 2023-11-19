@@ -17,25 +17,24 @@ import ResponsiveContainer from "./ResponsiveContainer/ResponsiveContainer";
 const Header = () => {
   const [anchorE1, setAnchorE1] = useState(null);
   const open = Boolean(anchorE1);
-  const handleCLick = (e) => {
-    setAnchorE1(e.currentTarget);
+  const handleCLick = (event) => {
+    setAnchorE1(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorE1(null);
   };
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  console.log(isMobile);
 
   return (
-    <ResponsiveContainer sx={{ height: "100%" }} width="100%">
-      {/* // <Box width="100%" p="0 2rem" display="flex"> */}
+    <Box sx={{ height: "100%" }} display="flex" width="100%">
       <Box
         display="flex"
         alignItems="center"
         justifyContent="space-between"
         height="100%"
-      // width="20rem"
+        padding="0 3rem"
+        width="100%"
       >
         <Tooltip
           title="Account Setting"
@@ -53,39 +52,39 @@ const Header = () => {
         </Tooltip>
         <Menu
           dir="rtl"
-          anchorEl={anchorE1}
+          anchorE1={anchorE1}
           id="account-menu"
           open={open}
           onClose={handleClose}
-          onClick={handleCLick}
-          PaperProps={{
-            elevation: 0,
-            sx: {
-              overflow: "visible",
-              filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-              mt: 1.5,
-              "& .MuiAvatar-root": {
-                width: 32,
-                height: 32,
-                ml: -0.5,
-                mr: 1,
-              },
-              "&:before": {
-                content: '""',
-                display: "block",
-                position: "absolute",
-                top: 0,
-                right: 14,
-                width: 10,
-                height: 10,
-                bgcolor: "background.paper",
-                transform: "translateY(-50%) rotate(45deg)",
-                zIndex: 0,
-              },
-            },
-          }}
+          // onClick={handleCLick}
+          // PaperProps={{
+          //   elevation: 0,
+          //   sx: {
+          //     overflow: "visible",
+          //     filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+          //     mt: 1.5,
+          //     "& .MuiAvatar-root": {
+          //       width: 32,
+          //       height: 32,
+          //       ml: -0.5,
+          //       mr: 1,
+          //     },
+          //     "&:before": {
+          //       content: '""',
+          //       display: "block",
+          //       position: "absolute",
+          //       top: 0,
+          //       right: 14,
+          //       width: 10,
+          //       height: 10,
+          //       bgcolor: "background.paper",
+          //       transform: "translateY(-50%) rotate(45deg)",
+          //       zIndex: 0,
+          //     },
+          //   },
+          // }}
           transformOrigin={{ horizontal: "right", vertical: "top" }}
-          anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+          anchorOrigin={{ horizontal: "right", vertical: "top" }}
         >
           <MenuItem onClick={handleClose}>بلاگ</MenuItem>
           <MenuItem onClick={handleClose}>جزئیات پروژه</MenuItem>
@@ -189,8 +188,10 @@ const Header = () => {
           </Typography>
         </Box>
       </Box>
+      {/* // <Box width="100%" p="0 2rem" display="flex"> */}
+
       {/* // </Box> */}
-    </ResponsiveContainer>
+    </Box>
   );
 };
 

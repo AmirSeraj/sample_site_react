@@ -10,7 +10,13 @@ body,
 }
 
 body {
+  margin: 0;
+  height: 100vh;
   font-family: Vazirmatn, sans-serif !important;
+}
+
+#root{
+  height: 100%;
 }
 
 .app {
@@ -21,13 +27,19 @@ body {
   grid-template-areas:
     "header"
     "main";
+    height: 100%;
 }
 
 header {
-  display: flex;
+  grid-area: header;
+  /* display: flex;
   align-items: center;
   width: 100vw;
-  justify-content: center;
+  justify-content: center; */
+}
+
+main{
+  grid-area: main;
 }
 
 a {
