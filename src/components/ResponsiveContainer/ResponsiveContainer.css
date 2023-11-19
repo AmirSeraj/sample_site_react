@@ -1,0 +1,19 @@
+.responsiveContainer {
+    width: 100vw !important;
+    max-width: 1200px !important;
+    /* height: 100%; */
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+@media screen and (max-width:768px) {
+    .responsiveContainer {
+        padding: 10px !important;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .responsiveContainer {
+        padding: 5px !important;
+    }
+}

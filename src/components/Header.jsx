@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
+import ResponsiveContainer from "./ResponsiveContainer/ResponsiveContainer";
 
 const Header = () => {
   const [anchorE1, setAnchorE1] = useState(null);
@@ -27,12 +28,14 @@ const Header = () => {
   console.log(isMobile);
 
   return (
-    <Container sx={{ height: "100%" }}>
+    <ResponsiveContainer sx={{ height: "100%" }} width="100%">
+      {/* // <Box width="100%" p="0 2rem" display="flex"> */}
       <Box
         display="flex"
         alignItems="center"
         justifyContent="space-between"
         height="100%"
+      // width="20rem"
       >
         <Tooltip
           title="Account Setting"
@@ -186,7 +189,8 @@ const Header = () => {
           </Typography>
         </Box>
       </Box>
-    </Container>
+      {/* // </Box> */}
+    </ResponsiveContainer>
   );
 };
 

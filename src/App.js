@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
+
 import Header from "./components/Header";
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
+import Home from "./pages/Home";
 
 function App() {
   // const theme = createTheme({
