@@ -15,7 +15,7 @@ body {
   font-family: Vazirmatn, sans-serif !important;
 }
 
-#root{
+#root {
   height: 100%;
 }
 
@@ -27,18 +27,22 @@ body {
   grid-template-areas:
     "header"
     "main";
-    height: 100%;
+  height: 100%;
 }
 
 header {
   grid-area: header;
+  z-index: 10000;
+  box-shadow: 0px 4px 13px 3px rgba(171, 165, 165, 1);
+  -webkit-box-shadow: 0px 4px 13px 3px rgba(171, 165, 165, 1);
+  -moz-box-shadow: 0px 4px 13px 3px rgba(171, 165, 165, 1);
   /* display: flex;
   align-items: center;
   width: 100vw;
   justify-content: center; */
 }
 
-main{
+main {
   grid-area: main;
 }
 
@@ -52,9 +56,41 @@ a {
   font-family: Vazirmatn, sans-serif !important;
 }
 
+.image--style {
+  box-shadow: 0px 0px 21px 2px rgba(66, 44, 44, 0.75);
+  -webkit-box-shadow: 0px 0px 21px 2px rgba(66, 44, 44, 0.75);
+  -moz-box-shadow: 0px 0px 21px 2px rgba(66, 44, 44, 0.75);
+  border-radius: 7px;
+}
 
-/* @media screen and (max-width : 1200px) {
-  .image--style {
-    width: 100%;
-  }
-} */
+.branding--image {
+  box-shadow: 3px 3px 26px 1px rgba(43, 32, 82, 0.7);
+  -webkit-box-shadow: 3px 3px 26px 1px rgba(43, 32, 82, 0.7);
+  -moz-box-shadow: 3px 3px 26px 1px rgba(43, 32, 82, 0.7);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.values--img {
+  box-shadow: 1px 3px 26px 4px rgba(214, 169, 169, 0.51);
+  -webkit-box-shadow: 1px 3px 26px 4px rgba(214, 169, 169, 0.51);
+  -moz-box-shadow: 1px 3px 26px 4px rgba(214, 169, 169, 0.51);
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.featured--image {
+  box-shadow: 1px 3px 26px 4px rgba(54, 30, 30, 0.51);
+  -webkit-box-shadow: 1px 3px 26px 4px rgba(54, 30, 30, 0.51);
+  -moz-box-shadow: 1px 3px 26px 4px rgba(54, 30, 30, 0.51);
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.featured--image1 {
+  box-shadow: 1px 3px 26px 4px rgba(48, 4, 4, 0.51);
+  -webkit-box-shadow: 1px 3px 26px 4px rgba(48, 4, 4, 0.51);
+  -moz-box-shadow: 1px 3px 26px 4px rgba(48, 4, 4, 0.51);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}

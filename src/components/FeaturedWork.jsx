@@ -43,8 +43,8 @@ const FeaturedWork = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <img width= "100%" src={card01} />
-          <img width= "100%" src={card02} />
+          <img className="featured--image" width= "100%" src={card01} />
+          <img className="featured--image1" width= "100%" src={card02} />
         </Box>
       </Container>
     </Box>

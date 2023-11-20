@@ -37,7 +37,7 @@ const Values = () => {
                         </Button>
                     </Box>
                 </Box>
-                <img width="100%" src={card03} />
+                <img className="values--img" width="100%" src={card03} />
             </Container>
         </Box>
     )
