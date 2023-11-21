@@ -1,6 +1,5 @@
 import {
   Box,
-  Container,
   IconButton,
   Menu,
   MenuItem,
@@ -12,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
-import ResponsiveContainer from "./ResponsiveContainer/ResponsiveContainer";
+import Logo from "./Logo";
 
 const Header = () => {
   const [anchorE1, setAnchorE1] = useState(null);
@@ -183,9 +182,10 @@ const Header = () => {
           </Box>
         </Box>
         <Box>
-          <Typography variant="h1" fontSize="1.5rem" fontWeight="bold">
+          <Logo />
+          {/* <Typography variant="h1" fontSize="1.5rem" fontWeight="bold">
             Neve
-          </Typography>
+          </Typography> */}
         </Box>
       </Box>
       {/* // <Box width="100%" p="0 2rem" display="flex"> */}

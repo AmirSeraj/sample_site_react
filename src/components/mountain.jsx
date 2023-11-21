@@ -1,19 +1,89 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Fade, Typography } from "@mui/material";
 import Image from "../assets/hero.jpg";
 import ResponsiveContainer from "./ResponsiveContainer/ResponsiveContainer";
+import { useEffect, useState } from "react";
 
 
 const Mountain = () => {
+    const [isVisible, setIsVisible] = useState(true);
     const styles = {
         boxContainer: {
-            height: 700,
+            // height: 700,
             backgroundImage: `url(${Image})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            position: "relative",
         },
+        DarkOverlay: {
+            position: "absolute",
+            top: "0",
+            right: "0",
+            bottom: "0",
+            left: "0",
+            zIndex: 1,
+            backgroundColor: "rgba(0,0,0,0.9)",
+            transform: 'translate(-50% -50%)',
+        },
+        TitleText: {
+            position: "absolute",
+            top: "0",
+            right: "0",
+            bottom: "0",
+            left: "0",
+            zIndex: 5,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "#fff",
+        },
+        TitleTextTypo: {
+            fontFamily: "Kaushan Script",
+            fontSize: "10em",
+            textShadow: "1px 1px 1px #202020"
+        },
+        TitleTextTypoH2: {
+            fontFamily: "Sirin Stencil",
+            fontSize: "1.25em",
+            textShadow: "1px 1px 1px #202020",
+            fontFamily: 'Sirin Stencil',
+            fontWeight: 300,
+            textTransform: 'capitalize',
+        }
     };
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsVisible(false);
+        }, 5000);
+
+        return () => clearTimeout(timer);
+    }, [])
+
     return (
         <Box width="100vw" height="768px" style={styles.boxContainer}>
+
+            {/* {
+                isVisible ? <Box style={styles.DarkOverlay} /> : null
+            } */}
+
+            <Fade in={isVisible} timeout={3000}>
+                <Box style={styles.DarkOverlay} />
+            </Fade>
+
+            <Fade in={isVisible} timeout={1500}>
+                <Box style={styles.TitleText}>
+                    <Box display="flex" flexDirection="row-reverse">
+                        <Typography style={styles.TitleTextTypo} variant="h1" data-scroll data-scroll-delay='0.13' data-scroll-speed='4'>W</Typography>
+                        <Typography style={styles.TitleTextTypo} variant="h1" data-scroll data-scroll-delay='0.13' data-scroll-speed='4'>i</Typography>
+                        <Typography style={styles.TitleTextTypo} variant="h1" data-scroll data-scroll-delay='0.13' data-scroll-speed='4'>b</Typography>
+                        <Typography style={styles.TitleTextTypo} variant="h1" data-scroll data-scroll-delay='0.13' data-scroll-speed='4'>e</Typography>
+                    </Box>
+                    <Typography style={styles.TitleTextTypoH2} variant="h2" data-scroll data-scroll-delay='0.04' data-scroll-speed='2'>Inspire, Create, Believe</Typography>
+                </Box>
+            </Fade>
+
+
             {/* <Container
                 display="flex"
                 alignItems="center"
@@ -30,17 +100,24 @@ const Mountain = () => {
                     alignItems="center"
                 >
                     <Typography
+                        data-scroll data-scroll-delay='0.13' data-scroll-speed='6'
                         textAlign="center"
-                        mt="8rem"
+                        mt="10rem"
                         variant="h4"
                         fontSize={{ lg: '4rem', sm: "3rem", xs: '2rem' }}
                         fontWeight="bold"
+                        sx={{ textShadow: "3px 3px 3px #ccc" }}
                     >
                         Create and grow your
                         <br />
                         unique website today
                     </Typography>
-                    <Typography textAlign="center" fontSize="1rem">
+                    <Typography
+                        data-scroll
+                        data-scroll-delay='0.13'
+                        data-scroll-speed='4'
+                        textAlign="center"
+                        fontSize="1rem">
                         Programmatically work but low hanging fruit so new economy
                         cross-pollination. Quick sync new
                         <br />
@@ -50,6 +127,9 @@ const Mountain = () => {
                         {/* <CustomButton label={"SEE ALL DEMOS"} /> */}
 
                         <Button
+                            data-scroll
+                            data-scroll-delay='0.13'
+                            data-scroll-speed='3'
                             sx={{
                                 "&:hover": {
                                     backgroundColor: "#363062",
@@ -62,6 +142,9 @@ const Mountain = () => {
                             SEE ALL DEMOS
                         </Button>
                         <Button
+                            data-scroll
+                            data-scroll-delay='0.11'
+                            data-scroll-speed='3'
                             sx={{
                                 "&:hover": {
                                     backgroundColor: "#001B79",
