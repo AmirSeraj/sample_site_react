@@ -181,16 +181,8 @@ const Header = () => {
             خانه
           </Box>
         </Box>
-        <Box>
-          <Logo />
-          {/* <Typography variant="h1" fontSize="1.5rem" fontWeight="bold">
-            Neve
-          </Typography> */}
-        </Box>
+        <Logo />
       </Box>
-      {/* // <Box width="100%" p="0 2rem" display="flex"> */}
-
-      {/* // </Box> */}
     </Box>
   );
 };

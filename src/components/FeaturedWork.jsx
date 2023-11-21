@@ -16,6 +16,7 @@ const FeaturedWork = () => {
       sx={{ backgroundColor: "#fff" }}
       display="flex"
       alignItems="center"
+      padding="10px"
     >
       <Container
         sx={{

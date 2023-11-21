@@ -2,14 +2,15 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 import Home from "./pages/Home";
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRef } from "react";
-import 'locomotive-scroll/dist/locomotive-scroll.css';
-import '@fontsource/kaushan-script';
-import '@fontsource/sirin-stencil';
+import "locomotive-scroll/dist/locomotive-scroll.css";
+import "@fontsource/kaushan-script";
+import "@fontsource/sirin-stencil";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const containerRef = useRef(null)
+  const containerRef = useRef(null);
   const theme = createTheme({
     palette: {
       type: "dark",
@@ -20,12 +21,10 @@ function App() {
       <CssBaseline />
 
       <LocomotiveScrollProvider
-        options={
-          {
-            smooth: true,
-            // ... all available Locomotive Scroll instance options 
-          }
-        }
+        options={{
+          smooth: true,
+          // ... all available Locomotive Scroll instance options
+        }}
         watch={
           [
             //..all the dependencies you want to watch to update the scroll.
@@ -35,19 +34,19 @@ function App() {
         }
         containerRef={containerRef}
       >
-        <div className="app" data-scroll-container ref={containerRef}>
-          <header>
-            <Header />
-          </header>
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-            </Routes>
-          </main>
-        </div>
-
+        <AnimatePresence>
+          <div className="app" data-scroll-container ref={containerRef}>
+            <header>
+              <Header />
+            </header>
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+              </Routes>
+            </main>
+          </div>
+        </AnimatePresence>
       </LocomotiveScrollProvider>
-
     </ThemeProvider>
   );
 }
